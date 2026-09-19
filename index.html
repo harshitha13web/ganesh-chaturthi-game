@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganesh Chaturthi - Divine Journey</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="introScreen" class="screen">
+    <div class="intro-glow"></div>
+    <div class="ganesha">🕉️</div>
+    <p class="eyebrow">A FESTIVAL ADVENTURE</p>
+    <h1>Ganesh Chaturthi</h1>
+    <h2>Divine Journey</h2>
+    <p class="intro-text">Help prepare the festival by collecting sacred offerings.</p>
+    <button id="startBtn">Begin the Journey ✨</button>
+    <p class="hint">Use ← → or A / D to move</p>
+  </div>
+
+  <main id="game" class="game hidden">
+    <header class="hud">
+      <div><span>🏆</span> Score <strong id="score">0</strong></div>
+      <div><span>❤️</span> Lives <strong id="lives">3</strong></div>
+      <div><span>🪔</span> Goal <strong>100</strong></div>
+    </header>
+
+    <section class="festival-scene" id="scene">
+      <div class="sky-glow"></div>
+      <div class="moon">🌕</div>
+      <div class="temple">🛕</div>
+      <div class="rangoli">✦ ❈ ✦</div>
+      <div class="ground"></div>
+
+      <div id="player" class="player" aria-label="Ganesha">🐘</div>
+
+      <div class="instructions">← → &nbsp; Move Ganesha &nbsp; ← →</div>
+    </section>
+
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Festival preparations</span>
+        <span id="progressText">0 / 100</span>
+      </div>
+      <div class="progress-bar"><div id="progress"></div></div>
+    </div>
+
+    <button id="restartBtn" class="small-btn">Restart</button>
+  </main>
+
+  <div id="messageScreen" class="screen hidden">
+    <div class="celebration">✨ 🪔 ✨</div>
+    <h1 id="messageTitle">Ganpati Bappa Morya!</h1>
+    <p id="messageText">The festival preparations are complete.</p>
+    <div class="final-score">Score: <strong id="finalScore">0</strong></div>
+    <button id="playAgainBtn">Play Again 🎮</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

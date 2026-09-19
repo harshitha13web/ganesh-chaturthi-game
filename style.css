@@ -1,0 +1,340 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #ffd166;
+  --orange: #ff8c42;
+  --deep: #160d2b;
+  --purple: #3b176d;
+  --cream: #fff4d6;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--cream);
+  background: radial-gradient(circle at top, #6d2a77, #160d2b 65%);
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen::before,
+.screen::after {
+  content: "✦   🪔   ✦   🌸   ✦   🪔   ✦";
+  position: absolute;
+  width: 100%;
+  color: rgba(255, 209, 102, 0.25);
+  font-size: 26px;
+  letter-spacing: 12px;
+  animation: float 5s ease-in-out infinite;
+}
+
+.screen::before { top: 10%; }
+.screen::after { bottom: 10%; animation-delay: 2s; }
+
+.intro-glow {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: rgba(255, 177, 66, 0.2);
+  filter: blur(55px);
+}
+
+.ganesha {
+  font-size: 86px;
+  z-index: 1;
+  filter: drop-shadow(0 0 20px rgba(255, 209, 102, .7));
+  animation: breathe 2.5s ease-in-out infinite;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 5px;
+  font-size: 12px;
+  z-index: 1;
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: clamp(42px, 9vw, 82px);
+  margin: 0;
+  line-height: 1;
+  background: linear-gradient(90deg, #fff0a6, #ffb347, #fff0a6);
+  -webkit-background-clip: text;
+  color: transparent;
+  z-index: 1;
+}
+
+h2 {
+  color: #ffdca3;
+  font-weight: normal;
+  letter-spacing: 5px;
+  margin: 10px 0 18px;
+  z-index: 1;
+}
+
+.intro-text {
+  max-width: 520px;
+  font-size: 17px;
+  line-height: 1.6;
+  z-index: 1;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffb347, #ff7a3d);
+  color: #2a1020;
+  padding: 14px 28px;
+  font-weight: bold;
+  box-shadow: 0 8px 25px rgba(255, 140, 66, .3);
+  transition: transform .2s, box-shadow .2s;
+  z-index: 1;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(255, 180, 71, .45);
+}
+
+.hint {
+  font-size: 12px;
+  opacity: .65;
+  margin-top: 18px;
+  z-index: 1;
+}
+
+.game {
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: auto;
+  padding: 18px;
+  position: relative;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.hud div {
+  flex: 1;
+  background: rgba(255, 255, 255, .09);
+  border: 1px solid rgba(255, 209, 102, .22);
+  border-radius: 14px;
+  padding: 10px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.hud strong {
+  color: var(--gold);
+  margin-left: 4px;
+}
+
+.festival-scene {
+  height: min(70vh, 650px);
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 220, 150, .25);
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255, 180, 80, .25), transparent 25%),
+    linear-gradient(#251049, #5a2469 58%, #2a1239);
+  box-shadow: inset 0 0 80px rgba(0,0,0,.35), 0 20px 60px rgba(0,0,0,.3);
+}
+
+.sky-glow {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 210, 120, .14);
+  filter: blur(15px);
+}
+
+.moon {
+  position: absolute;
+  right: 8%;
+  top: 35px;
+  font-size: 62px;
+  filter: drop-shadow(0 0 20px #ffe5a1);
+}
+
+.temple {
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  transform: translateX(-50%);
+  font-size: 130px;
+  opacity: .75;
+}
+
+.rangoli {
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 44px;
+  color: var(--gold);
+  opacity: .55;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 105px;
+  background: linear-gradient(#321342, #170a24);
+  border-top: 1px solid rgba(255, 209, 102, .2);
+}
+
+.player {
+  position: absolute;
+  bottom: 74px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 72px;
+  z-index: 5;
+  transition: left .08s linear;
+  filter: drop-shadow(0 8px 8px rgba(0,0,0,.35));
+  user-select: none;
+}
+
+.instructions {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font: 11px Arial, sans-serif;
+  opacity: .45;
+  z-index: 6;
+  white-space: nowrap;
+}
+
+.item {
+  position: absolute;
+  top: -60px;
+  z-index: 4;
+  font-size: 38px;
+  user-select: none;
+  animation: spin 2s linear infinite;
+}
+
+.obstacle {
+  filter: grayscale(.2);
+}
+
+.pop {
+  position: absolute;
+  z-index: 10;
+  font-weight: bold;
+  color: var(--gold);
+  animation: popUp .7s ease-out forwards;
+  pointer-events: none;
+}
+
+.progress-wrap {
+  margin: 12px 2px;
+  font-family: Arial, sans-serif;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  opacity: .8;
+  margin-bottom: 6px;
+}
+
+.progress-bar {
+  height: 9px;
+  background: rgba(255,255,255,.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff9f43, #ffe29a);
+  border-radius: inherit;
+  transition: width .3s;
+}
+
+.small-btn {
+  display: block;
+  margin: 12px auto;
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.celebration {
+  font-size: 60px;
+  margin-bottom: 20px;
+  animation: breathe 1.5s infinite;
+}
+
+.final-score {
+  margin: 20px;
+  font-size: 20px;
+  color: #ffd166;
+}
+
+@keyframes breathe {
+  50% { transform: scale(1.06); }
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes popUp {
+  from { opacity: 1; transform: translate(-50%, 0); }
+  to { opacity: 0; transform: translate(-50%, -55px); }
+}
+
+@media (max-width: 600px) {
+  .game { padding: 10px; }
+  .hud { gap: 5px; }
+  .hud div { font-size: 11px; padding: 8px 4px; }
+  .festival-scene { min-height: 480px; height: 68vh; }
+  .player { font-size: 60px; }
+  .temple { font-size: 95px; }
+  .moon { font-size: 45px; }
+}
